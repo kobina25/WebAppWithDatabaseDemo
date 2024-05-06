@@ -1,4 +1,14 @@
 pr:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Azure subscription 1(98a36f4f-d136-4114-b9c8-f1daaad55248)'
+    subscriptionId: '98a36f4f-d136-4114-b9c8-f1daaad55248'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'DefaultResourceGroup-EUS'
+    location: 'East US'
+    templateLocation: 'Linked artifact'
+    deploymentMode: 'Incremental'
   branches:
     include:
       - dev
